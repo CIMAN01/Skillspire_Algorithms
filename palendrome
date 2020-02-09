@@ -1,0 +1,34 @@
+/*
+Create a method that takes a string.
+Return true if the string is a palendrome.
+Otherwise return false
+ */
+public class palendrome {
+
+    // a method that checks for a palendrome match
+    public static boolean pldromeCheck(String str) {
+        // remove spaces from string and change to lower case
+        str = str.replaceAll("\\s","").toLowerCase();
+        // create an empty string
+        String reversed = "";
+        // reverse the string using a for loop
+        for (int i = str.length()-1; i >= 0; i--) {
+            reversed += str.charAt(i);
+        }
+
+        // check for if condition holds true for a palendrome
+        if (reversed.equals(str)) {
+            return true; // return true
+        }
+        return false; // otherwise return false
+    }
+
+    // run the program
+    public static void main(String[] args) {
+        // create a palendrome
+        String name = "Able was I ere I saw Elba";
+        System.out.println();
+        // invoke the method
+        System.out.println(pldromeCheck(name));
+    }
+}
