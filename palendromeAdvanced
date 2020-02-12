@@ -1,47 +1,33 @@
-//********************************************************************
-// PalindromeTester.java Author: Lewis/Loftus
-//
-// Demonstrates the use of nested while loops.
-//********************************************************************
+/*
+Improved version of palendrome using a faster algorithm.
+*/
 
-import java.util.Scanner;
+public class palendrome2 {
 
-public class palendromeTextBook
-{
-//-----------------------------------------------------------------
-// Tests strings to see if they are palindromes.
-//-----------------------------------------------------------------
-    public static void main(String[] args)
-    {
-        String str, another = "y";
-        int left, right;
-
-        Scanner scan = new Scanner(System.in);
-
-        while (another.equalsIgnoreCase("y")) // allows y or Y
-        {
-            System.out.println("Enter a potential palindrome:");
-
-            str = scan.nextLine();
-            left = 0;
-            right = str.length() - 1;
-
-            while (str.charAt(left) == str.charAt(right) && left < right)
-            {
-                left++;
-                right--;
-            }
-            System.out.println();
-
-            if (left < right)
-                System.out.println("That string is NOT a palindrome.");
-            else
-                System.out.println("That string IS a palindrome.");
-
-            System.out.println();
-            System.out.print("Test another palindrome (y/n)? ");
-
-            another = scan.nextLine();
+    public static boolean isPalendrome(String str) {
+        // remove spaces from string and change to lower case
+        str = str.replaceAll("\\s","").toLowerCase();
+        // create starting and ending indexes
+        int left = 0;
+        int right = str.length()-1;
+        // check the string for similar characters
+        // (start at each end and meet in the middle while string has not been tested)
+        while ((str.charAt(left) == str.charAt(right)) && (left < right)) {
+            left++; // traverse right
+            right--; // traverse left
         }
+        // return false if string already tested
+        if (left < right) {
+            return false;
+        }
+        return true;
+    }
+
+    public static void main(String[] args) {
+        // create a palendrome string
+        String name = "Able was I ere I saw Elba";
+        System.out.println();
+        // invoke the method
+        System.out.println(isPalendrome(name));
     }
 }
