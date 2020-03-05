@@ -1,3 +1,7 @@
+// https://leetcode.com/problems/reverse-words-in-a-string/
+
+// Input: "the sky is blue"
+// Output: "blue is sky the"
 
 import java.util.Scanner;
 
@@ -14,7 +18,6 @@ public class ReverseString {
         }
         // return the reversed string
         return reversedText;
-
     }
 
     public static void main(String[] args) {
