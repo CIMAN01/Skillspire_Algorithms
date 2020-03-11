@@ -36,14 +36,21 @@ public class RandomAlgorithms {
     }
     // main method
     public static void main(String[] args) {
+
+        // 1.
         logNum(5);
+        // 2.
         String[] arr = {"john", "Adam", "Berkley", "Smith"};
         contactArr(arr);
+        // 3.
         int[] numArr = {0, 3, 7, 10, 13, 20, 11};
         arrLengthOddOrEven(numArr);
+        // 4.
         int[] numEven = {2, 4, 6, 8, 10};
         int[] numOdd  = {3, 5, 7, 9, 11};
         System.out.println(isArrEven(numOdd));
         System.out.println(isArrEven(numEven));
+
     }
 }
+
