@@ -3,7 +3,7 @@ import java.util.ArrayList;
 public class Algorithms {
     
     public static void main(String[] args) {
-
+        // strings
         String someTestString = "hey this!is!some!text!";
         String[] testArr = someTestString.split("");
 
