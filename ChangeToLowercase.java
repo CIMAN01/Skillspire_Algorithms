@@ -35,6 +35,6 @@ public class ChangeToLowerCase {
         String someStr = "ThisIsASTRING";
         // invoke the method to change all letters to lowercase and print to console
         changeToLowerCase(someStr);
-
     }
+   
 }
