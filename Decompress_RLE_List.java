@@ -37,11 +37,9 @@ import java.util.Arrays;
 
 // main class
 public class DecompressEncodedList {
-
     // a method that takes a list (array), then concatenates sub-lists (from left to right)
     // to generate a decompressed list: [1,2,3,4] -> [1,2] and [3,4] -> [2,4,4,4]
     public static int[] decompressList(int[] nums) {
-
         //  even numbers (0, 2, 4,...) -> index element is the frequency
         //  odd numbers (1, 3, 5,...) -> index element is the value
 
@@ -49,15 +47,15 @@ public class DecompressEncodedList {
 
         // create a sum variable and initialize to 0
         int sum = 0;
-        // loop through the original list array
 
+        // loop through the original list array
         for (int i = 0; i < nums.length; i += 2) {
-            // add every other i-th element to sum
-            sum += nums[i];
+            // add every other i-th element (frequency) to sum
+            sum += nums[i]; // adding each freq will determine the size of the array
         }
 
         // create a new array of sum length
-        int[] array = new int[sum];
+        int[] array = new int[sum]; // array size will depend on sum obtained from original list
 
         // create a index variable and initialize to 0
         int index = 0;
@@ -68,31 +66,26 @@ public class DecompressEncodedList {
             int freq = nums[i];
             // value = num[i + 1]
             int val = nums[i + 1];
-            // inner loop where we add the value x amount of times (x = frequency)
-            for (int j = 0; j < freq; j++) {
-                // add value to the appropriate index in the array (then increment the index)
+            // inner loop where we add the val an x amount of times (where x is the freq)
+            for (int j = 1; j <= freq; j++) { // same as (int j = 0; j < freq; j++)
+                // add value at the appropriate index in the array (then increment the index)
                 array[index++] = val;
             }
         }
-
         // return the the compressed list array
         return array;
-
     }
 
     // main method
     public static void main(String[] args) {
-
         // create an array with values from example 1
         int[] inputArray1 = {1, 2, 3, 4}; // input: [1,2,3,4]
         // create an array with values from example 1
         int[] inputArray2 = {1, 1, 2, 3}; // input: [1,1,2,3]
-
         // invoke the method and print the resulting output fo example 1
         System.out.println(Arrays.toString(decompressList(inputArray1))); // output: [2,4,4,4]
         // invoke the method and print the resulting output fo example 2
         System.out.println(Arrays.toString(decompressList(inputArray2))); // output:  [1,3,3]
-
     }
 
 }
