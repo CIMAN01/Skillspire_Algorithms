@@ -1,0 +1,24 @@
+import java.util.Arrays;
+
+public class ReturnLongestStringElement {
+
+    public static String getLongestString(String[] array) {
+        int index = 0;
+        int elementLength = array[0].length();
+        for(int i=1; i < array.length; i++) {
+            if(array[i].length() > elementLength) {
+                index = i; elementLength = array[i].length();
+            }
+        }
+        return array[index];
+    }
+
+    public static void main(String[] args) {
+        String[] animalNames = {"cat", "rabbit", "horse", "goat", "rooster", "ooooooooomph"};
+        String animal = getLongestString(animalNames);
+        System.out.println("longest element from ");
+        System.out.println(Arrays.toString(animalNames));
+        System.out.println("is ");
+        System.out.println(animal);
+    }
+}
