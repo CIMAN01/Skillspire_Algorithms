@@ -20,7 +20,7 @@ public class ChangeToLowerCase {
             // check if letter is uppercase
             if (65 <= aChar && aChar <= 90) {
                 // change to lowercase
-                aChar = (char) ((aChar + 32)); // cast needed
+                aChar = (char) (aChar + 32); // cast needed
             }
             // add each lowercase letter to resulting string
             lowerCaseStr += aChar;
