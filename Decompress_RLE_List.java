@@ -42,7 +42,6 @@ public class DecompressEncodedList {
     public static int[] decompressList(int[] nums) {
         //  even numbers (0, 2, 4,...) -> index element is the frequency
         //  odd numbers (1, 3, 5,...) -> index element is the value
-
         // [freq, val] = [nums[2*i], nums[2*i+1]] (with i >= 0).
 
         // create a sum variable and initialize to 0
@@ -61,13 +60,13 @@ public class DecompressEncodedList {
         int index = 0;
 
         // outer loop where we iterate every other i-th element
-        for (int i = 0; i < array.length; i += 2) {
-            // frequency = num[i]
+        for (int i = 0; i < nums.length; i += 2) {
+            // number of elements (frequency) of a given value
             int freq = nums[i];
-            // value = num[i + 1]
+            // element value
             int val = nums[i + 1];
             // inner loop where we add the val an x amount of times (where x is the freq)
-            for (int j = 1; j <= freq; j++) { // same as (int j = 0; j < freq; j++)
+            for (int j = 0; j < freq; j++) {
                 // add value at the appropriate index in the array (then increment the index)
                 array[index++] = val;
             }
@@ -82,9 +81,9 @@ public class DecompressEncodedList {
         int[] inputArray1 = {1, 2, 3, 4}; // input: [1,2,3,4]
         // create an array with values from example 1
         int[] inputArray2 = {1, 1, 2, 3}; // input: [1,1,2,3]
-        // invoke the method and print the resulting output fo example 1
+        // invoke the method and print the resulting output for example 1 // input:  [1,2,3,4]
         System.out.println(Arrays.toString(decompressList(inputArray1))); // output: [2,4,4,4]
-        // invoke the method and print the resulting output fo example 2
+        // invoke the method and print the resulting output for example 2 // input:  [1,1,2,3]
         System.out.println(Arrays.toString(decompressList(inputArray2))); // output:  [1,3,3]
     }
 
