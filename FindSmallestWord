@@ -15,7 +15,8 @@ public class FindSmallestWord {
             // grab the i-th word and store it
             String word = words[i];
             // store the i-th element's length
-            int wordLength = word.length();
+//            int wordLength = word.length();
+            int wordLength = words[i].length();
             // if the i-th element's length is smaller than the currently assigned smallest length
             if (wordLength < smallestWordLength) {
                 // swap the length
@@ -27,12 +28,12 @@ public class FindSmallestWord {
         // return the smallest word
         return smallestWord;
     }
-
+    // driver method
     public static void main(String[] args) {
         // create some random string
-        String testStr = "Here I a come!";
+        String testStr = "Here I come!";
         // invoke the method and print the smallest word
-        System.out.println(findSmallestWord(testStr));
+        System.out.println(findSmallestWord(testStr)); // should print "I"
     }
 
 }
