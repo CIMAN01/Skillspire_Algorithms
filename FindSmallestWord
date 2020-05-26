@@ -1,27 +1,26 @@
 
-// Given a string of words, create a method that return the smallest word.
+/* Given a string of words, create a method that return the smallest word. */
 
 public class FindSmallestWord {
-
     // a method that finds the smallest word in a String
-    public static String findSmallestWord(String inputStr) {
-        // create an array of words and assign each word from the input String to it
-        String[] words = inputStr.split(" ");
-        // create a smallest length variable and assign the first element length to it
-        int smallestWordLength = words[0].length();
-        // create a smallest String variable and assign the first element value to it
+    public static String findSmallestWord(String input) {
+        // create an array that holds each word from the input String
+        String[] words = input.split(" "); // split by words
+        // store the first element value
         String smallestWord = words[0];
+        // store the first element length
+        int smallestWordLength = words[0].length();
         // loop through each words from the array
         for (int i = 0; i < words.length; i++) {
-            // grab the i-th word and assign it to the String variable word
-            String word = words[i]; 
-            // assign i-th element's length to the variable length
-            int length = word.length();
+            // grab the i-th word and store it
+            String word = words[i];
+            // store the i-th element's length
+            int wordLength = word.length();
             // if the i-th element's length is smaller than the currently assigned smallest length
-            if (length < smallestWordLength) {
-                // swap/replace the length value(s)
-                smallestWordLength = length;
-                // swap/replace the word
+            if (wordLength < smallestWordLength) {
+                // swap the length
+                smallestWordLength = wordLength;
+                // swap the word
                 smallestWord = word;
             }
         }
@@ -35,4 +34,5 @@ public class FindSmallestWord {
         // invoke the method and print the smallest word
         System.out.println(findSmallestWord(testStr));
     }
+
 }
