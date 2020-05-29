@@ -10,12 +10,9 @@
 
 public class FizzBuzz {
 
-    /*
-        We have a for loop that iterates from 0 from up to the num
-        passed in the argument.
-    */
+    // fizzBuzz method
     public static void fizzBuzz(int num) {
-        // "i" represents the current number between 0 and num.
+        // a for loop that iterates from 0 from up to the num passed in the argument
         for (int i = 0; i <= num; i++) {
             // If i is divisible by 3 AND 5, print FIZZBUZZ
             if (i % 3 == 0 && i % 5 == 0) {
@@ -34,11 +31,11 @@ public class FizzBuzz {
                 System.out.println(i);
             }
         }
+        
     }
 
-    // LJ had a great response! He's keeping his code minimal
-    // by using ternary operators.
-    public static void fizzBuzzFromLJ(int highestNumber) {
+    // use ternary operator
+    public static void fizzBuzzTernary(int highestNumber) {
         for (int i = 1; i <= highestNumber; i++) {
             String fizzCheck = "";
             fizzCheck += (i % 3) == 0 ? "fizz" : "";
@@ -49,7 +46,7 @@ public class FizzBuzz {
 
     public static void main(String[] args) {
         fizzBuzz(15);
-        fizzBuzzFromLJ(15);
+        fizzBuzzTernary(15);
     }
 
 }
