@@ -44,6 +44,7 @@ public class FizzBuzz {
         }
     }
 
+    // main method
     public static void main(String[] args) {
         fizzBuzz(15);
         fizzBuzzTernary(15);
