@@ -1,5 +1,7 @@
 /*
 
+Print Hashtags as displayed below:
+
 #
 ##
 ###
@@ -7,27 +9,30 @@
 #####
 ######
 
-Too easy? Have the method take a number that represents
-the number of lines to create.
-Continue the pattern above for that many lines.
+Have the method take a number that represents the number of lines to create.
+Continue the pattern above for that many lines. The method should contain no more than
+one variable. That variable, at the time of declaration should contain the value: "#"
 
-The method should contain no more than one variable.
-That variable, at the time of declaration should contain this value: "#"
-
- */
+*/
 
 public class Hashtag {
 
-    public static void printHash(int numOfLines) {
+    public static void printHashtags(int numOfLines) {
+        // create a variable that holds a "#"
         String hash = "#";
-        // for (int i = 0; i < numOfLines; i++)
-        for (int i = 1; i <= numOfLines; i++) {
+        // iterate up to num that was passed in as argument
+        for (int i = 0; i < numOfLines; i++) {
+            // print a "#"
             System.out.println(hash);
-            hash +="#";
+            // increment the hash by "#" each time
+            hash += "#";
         }
     }
 
+    // main method
     public static void main(String[] args) {
-        printHash(6);
+        // invoke the method
+        printHashtags(6);
     }
+
 }
