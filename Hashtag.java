@@ -17,6 +17,7 @@ one variable. That variable, at the time of declaration should contain the value
 
 public class Hashtag {
 
+    // a method that takes in a certain amount of lines and prints that many Hashtags
     public static void printHashtags(int numOfLines) {
         // create a variable that holds a "#"
         String hash = "#";
