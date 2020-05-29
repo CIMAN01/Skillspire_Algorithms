@@ -30,61 +30,64 @@ Example 3:
 
  */
 
-public class Challenge4 {
+public class NumberOfStepsToReduceNumToZero {
 
-    //Steps to reduce num to 0
-    //Given a non-negative integer num, return the number of steps to reduce it to zero.
-    //If the current number is even, you have to divide it by 2, otherwise, you have to subtract 1 from it.
+    // steps to reduce num to 0 given a non-negative integer num, return the number of steps to
+    // reduce it to zero. If the current number is even, you have to divide it by 2, otherwise,
+    // you have to subtract 1 from it.
 
-    public static int reduceNumberToZero(int num) {
-
+    // a method that returns the number of steps it takes to reduce an input number to zero
+    public static int findNumOfStepsByReduction(int num) {
+        // create a variable steps and initialize it to zero
         int steps = 0;
-
+        // cover the base case with an if statement
         if (num < 2) {
             return -1;
         }
-
+        // while the input number has not been fully reduced to zero
         while (num > 0) {
-
+            // if the number is even
             if (num % 2 == 0) {
+                // divide it in half
                 num = num / 2;
-            } else {
+            }
+            // otherwise subtract one from it
+            else {
                 num = num - 1;
             }
+            // increment the steps
             steps++;
         }
+        // return the number of steps it took to reduce the input number to zero
         return steps;
     }
-    
-    // using recursion (more advanced)
-    public static int reduceNumberToZero2(int num) {
 
-        // we could do it iteratively,
-        // but it is somewhat more elegant to use recursion here,
-        // as the numbers are not too big (int),
-        // so assuming only 32 recursive calls at most.
+    // using recursion (more advanced)...
 
+    // we could do it iteratively, but it is somewhat more elegant to use recursion here,
+    // as the numbers are not too big, assuming only 32 recursive calls at most
+    public static int findNumOfStepsByRecursion(int num) {
         // base case, if num is 0 return 0, if num is 1 return 1
         if (num < 2) {
             return num;
         }
 
-        // recursive case, if num is odd, do -1 and divide
-        // by two then recurse (2 ops),
-        // if even, only divide by 2 and recurse (1 op)
-        // note 1: num >> 1 takes care of both cases
-        // since it is truncated division by 2.
-        // note 2: num % 2 == 1 is the same as (num & 1) == 1,
-        // I don't have a personal preference for either.
-        return reduceNumberToZero2(num >> 1) + (((num & 1) == 1) ? 2 : 1);
+        // recursive case: if num is odd, do -1 and divide by two then recurse (2 operations)
+        // if even, only divide by 2 and recurse (1 operation )
+        // note 1: num >> 1 takes care of both cases since it is truncated division by 2
+        // note 2: num % 2 == 1 is the same as (num & 1) == 1
+
+        return findNumOfStepsByRecursion(num >> 1) + (((num & 1) == 1) ? 2 : 1);
     }
-    
-      public static void main(String[] args) {
 
-        int number = 123;
-        System.out.println(reduceNumberToZero(number));
-        //System.out.println(reduceNumberToZero2(number));
-
+    // main method
+    public static void main(String[] args) {
+        // number variables
+        int numberOne = 123;
+        int numberTwo = 8;
+        // invoke method and print to console
+        System.out.println(findNumOfStepsByReduction(numberOne));
+        System.out.println(findNumOfStepsByRecursion(numberTwo));
     }
 
 }
