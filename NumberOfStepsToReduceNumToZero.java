@@ -62,6 +62,33 @@ public class NumberOfStepsToReduceNumToZero {
         return steps;
     }
 
+    // same as above but with a for-loop instead of while-loop
+    public static int findNumOfStepsByReduction2(int number) {
+        // create a variable steps and initialize it to zero
+        int steps = 0;
+        // cover the base case with an if statement
+        if (number < 2) {
+            return -1;
+        }
+        // iterate starting at num and keep performing math as long as num > 0
+        for (int num = number; num > 0; ) { // i-- will not work and is left out intentionally
+            // if the number is even
+            if (num % 2 == 0) {
+                // divide it in half
+                num = num / 2;
+            }
+            // otherwise subtract one from it
+            else {
+                num = num - 1;
+            }
+            // increment the steps
+            steps++;
+        }
+        // return the number of steps it took to reduce the input number to zero
+        return steps;
+    }
+
+
     // using recursion (more advanced)...
 
     // we could do it iteratively, but it is somewhat more elegant to use recursion here,
@@ -74,8 +101,8 @@ public class NumberOfStepsToReduceNumToZero {
 
         // recursive case: if num is odd, do -1 and divide by two then recurse (2 operations)
         // if even, only divide by 2 and recurse (1 operation )
-        // note 1: num >> 1 takes care of both cases since it is truncated division by 2
-        // note 2: num % 2 == 1 is the same as (num & 1) == 1
+        // num >> 1 takes care of both cases since it is truncated division by 2
+        // num % 2 == 1 is the same as (num & 1) == 1
 
         return findNumOfStepsByRecursion(num >> 1) + (((num & 1) == 1) ? 2 : 1);
     }
@@ -83,11 +110,13 @@ public class NumberOfStepsToReduceNumToZero {
     // main method
     public static void main(String[] args) {
         // number variables
-        int numberOne = 123;
-        int numberTwo = 8;
+        int numberWhileLoop = 123;
+        int numberForLoop = 123;
+        int numberRecursion = 123;
         // invoke method and print to console
-        System.out.println(findNumOfStepsByReduction(numberOne));
-        System.out.println(findNumOfStepsByRecursion(numberTwo));
+        System.out.println("using while-loop: " + findNumOfStepsByReduction(numberWhileLoop));
+        System.out.println("using for-loop: " + findNumOfStepsByReduction2(numberForLoop));
+        System.out.println("using recursion: " + findNumOfStepsByRecursion(numberRecursion));
     }
 
 }
