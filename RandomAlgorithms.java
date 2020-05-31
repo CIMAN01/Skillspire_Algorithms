@@ -77,5 +77,5 @@ public class RandomAlgorithms {
         System.out.println(isArrayEven(numOdd));
         System.out.println(isArrayEven(numEven));
     }
-    
+
 }
