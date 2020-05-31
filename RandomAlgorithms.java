@@ -1,8 +1,21 @@
-// In-class algorithm challenges via zoom app (day 15)
+/* 
+
+In-class algorithm challenges via zoom app (day 15):
+
+1. Create a method that takes an integer. Log numbers 0 up to that number.
+
+2. Create a method that takes an array of contacts and logs each contact.
+ 
+3. Create a method that takes an array of numbers. If there is an odd number of values, 
+   log the one in the middle.
+   
+4. Create a method that takes an array of numbers and returns true if all numbers are even. 
+   
+*/
 
 public class RandomAlgorithms {
 
-    // 1. Create a method that takes an integer. Log numbers 0 up to that number.
+    // a method that takes an integer. Log numbers 0 up to that number
     public static void logNumbers(int num) {
         // loop through the numbers
         for (int i = 0; i <= num; i++) {
@@ -11,7 +24,7 @@ public class RandomAlgorithms {
         }
     }
 
-    // 2. Create a method that takes an array of contacts and logs each contact.
+    // a method that takes an array of contacts and logs each contact
     public static void logContactArray(String[] contact) {
         // iterate over the array
         for (int i = 0; i < contact.length; i++) {
@@ -20,8 +33,8 @@ public class RandomAlgorithms {
         }
     }
 
-    // 3. Create a method that takes an array of numbers. If there is an odd
-    //    number of values, log the one in the middle.
+    // a method that takes an array of numbers and logs the one in the middle if there 
+    // is an odd number of values
     public static void logMiddleOddValueInArray(int[] arr) {
         // if array is odd
         if (arr.length % 2 != 0) {
@@ -36,8 +49,7 @@ public class RandomAlgorithms {
         }
     }
 
-    // 4. Create a method that takes an array of numbers and returns true if all
-    //    numbers are even.
+    // a method that takes an array of numbers and returns true if all numbers are even
     public static boolean isArrayEven(int[] arr) {
         // iterate over the array
         for (int i = 0; i < arr.length; i++) {
