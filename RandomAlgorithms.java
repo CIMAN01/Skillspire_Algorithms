@@ -3,54 +3,79 @@
 public class RandomAlgorithms {
 
     // 1. Create a method that takes an integer. Log numbers 0 up to that number.
-    public static void logNum(int num) {
+    public static void logNumbers(int num) {
+        // loop through the numbers
         for (int i = 0; i <= num; i++) {
+            // print the i-th value
             System.out.println(i);
         }
     }
 
     // 2. Create a method that takes an array of contacts and logs each contact.
-    public static void contactArr(String[] contact) {
+    public static void logContactArray(String[] contact) {
+        // iterate over the array
         for (int i = 0; i < contact.length; i++) {
+            // print the i-th contact in the array
             System.out.println(contact[i]);
         }
     }
 
     // 3. Create a method that takes an array of numbers. If there is an odd
     //    number of values, log the one in the middle.
-    public static void arrLengthOddOrEven(int[] numArr) {
-        if (numArr.length % 2 != 0) {
-            System.out.println(numArr[numArr.length/2]);
+    public static void logMiddleOddValueInArray(int[] arr) {
+        // if array is odd
+        if (arr.length % 2 != 0) {
+            // store middle index
+            int middle = arr.length/2;
+            // print middle value
+            System.out.println(arr[middle]);
+        }
+        // the array is even
+        else {
+            System.out.println("the array has an even number of values");
         }
     }
 
     // 4. Create a method that takes an array of numbers and returns true if all
-    //   numbers are even.
-    public static boolean isArrEven(int[] arr) {
+    //    numbers are even.
+    public static boolean isArrayEven(int[] arr) {
+        // iterate over the array
         for (int i = 0; i < arr.length; i++) {
+            // if a single number is found to be odd
             if (arr[i] % 2 != 0) {
-              return false;
+                // the method returns false
+                return false;
             }
         }
+        // if all numbers are even the method returns true
         return true;
     }
+
     // main method
     public static void main(String[] args) {
+        /* 1. */
+        // invoke method
+        logNumbers(5);
 
-        // 1.
-        logNum(5);
-        // 2.
+        /* 2. */
+        // create an array
         String[] arr = {"john", "Adam", "Berkley", "Smith"};
-        contactArr(arr);
-        // 3.
+        // invoke method
+        logContactArray(arr);
+
+        /* 3. */
+        // create an array
         int[] numArr = {0, 3, 7, 10, 13, 20, 11};
-        arrLengthOddOrEven(numArr);
-        // 4.
+        // invoke method
+        logMiddleOddValueInArray(numArr);
+
+        /* 4. */
+        // create even and odd arrays
         int[] numEven = {2, 4, 6, 8, 10};
         int[] numOdd  = {3, 5, 7, 9, 11};
-        System.out.println(isArrEven(numOdd));
-        System.out.println(isArrEven(numEven));
-
+        // invoke the methods and print to console
+        System.out.println(isArrayEven(numOdd));
+        System.out.println(isArrayEven(numEven));
     }
+    
 }
-
