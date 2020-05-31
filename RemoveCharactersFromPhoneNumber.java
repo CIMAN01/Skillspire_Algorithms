@@ -1,5 +1,7 @@
 /*
+
 Challenge:
+
 Take user input for a phone number. Remove the following characters
    and return the number without them:
    (
@@ -13,31 +15,25 @@ Take user input for a phone number. Remove the following characters
    		Input: 425 323-2323
    		Output: 4253232323
 
- */
+*/
 
-import java.util.Scanner;
+// main class
+public class RemoveCharactersFromPhoneNumber {
 
-public class Challenge {
-
-    public static void main(String[] args) {
-
-        Scanner console = new Scanner(System.in);
-
-        System.out.println("enter a phone number: ");
-
-        String number = console.nextLine();
-
-        replaceNumber(number);
-
-    }
-
-    public static void replaceNumber(String number) {
-
+    // a method that removes the characters "( ) -" from a phone number
+    public static String replacePhoneNumber(String number) {
+        // create a regex that holds only numbers and alphabetical characters
         String regex = "[^a-zA-Z0-9]";
-
+        // update number by replacement with regex values
         number = number.replaceAll(regex, "");
-
-        System.out.println(number);
-
+        // return the new number without the special characters
+        return number;
     }
+
+    // main method
+    public static void main(String[] args) {
+        String number = "(425)-323-2323";
+        System.out.println(replacePhoneNumber(number));
+    }
+
 }
