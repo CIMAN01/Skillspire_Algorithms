@@ -17,9 +17,9 @@ public class ReverseAStringByWords {
         // create an empty String
         String reversedWords = "";
         // loop through the array by starting at the end of the text and iterating backwards
-        for (int i = array.length-1; i >= 0; i--) { 
+        for (int i = array.length-1; i >= 0; i--) {
             // add each word in reverse order with a space between them
-            reversedWords += " " + array[i];
+            reversedWords += array[i] + " ";
         }
         // return the text with the words reversed
         return reversedWords;
