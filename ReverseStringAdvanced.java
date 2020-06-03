@@ -1,5 +1,3 @@
-import java.util.regex.Pattern;
-
 /*
 
 Given a string with numbers, letters, and special characters, reverse the string BUT keep the
@@ -15,25 +13,42 @@ Example 2:
 Input -  f3$%cat!no&
 Output - on$%tac!3f&
 
- */
+*/
+
 
 // main class
-public class ReverseString {
+public class ReverseStringAdvanced {
 
-    //String specialChars = "A!@#$% ^&*()Z";
+//    String specialChars = "A!@#$% ^&*()Z";
+
+    // a method that checks for special characters using the ASCII chart
+    public static boolean isAlphaNumeric(char ch) {
+        // check the character input ch against given range of alphanumerical characters:
+        //     Numeric 0 to 9      || Alphabet A to Z (caps) ||     Alphabet a to z
+        if ((ch >= 48 && ch <= 57) || (ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122))  {
+            // if it's within the range it is true that it is an alphanumerical value
+            return true;
+        }
+        // if it's not within the range it is not an alphanumerical value
+        return false;
+    }
 
     // a method that reverses a string without affecting special characters
     public static String reverseString(String str) {
 
-        // create an array of characters
-        char[] arr;
-        // toCharArray() method converts the given string into a sequence of characters
-        arr = str.toCharArray();
+        // using built in method to convert the given string into a sequence of characters
+//        char[] arr = str.toCharArray();
 
-        //char[] arr = str.toCharArray(); // one-line not used for clarity
+        // create an array of characters with a length equal to the input String
+        char[] arr = new char[str.length()];
+
+        // iterate over the input String and add each character to the array
+        for (int i = 0; i < str.length()-1; i++) {
+            arr[i] = str.charAt(i);
+        }
 
         // loop through array i start at first index and j start at last index
-        for (int i = 0, j = str.length() - 1; i < j;) {
+        for (int i = 0, j = str.length()-1; i < j;) {
             // if i and j indexes are both regular characters we reverse them:
             if (isAlphaNumeric(arr[i]) && isAlphaNumeric(arr[j])) {
                 // put that i-th index into a temporary variable
@@ -61,20 +76,6 @@ public class ReverseString {
         return String.valueOf(arr);
     }
 
-    // a method that checks for special characters using the ASCII chart
-    public static boolean isAlphaNumeric(char ch) {
-        // check the character input ch against given range of alphanumerical characters:
-        //     Numeric 0 to 9      || Alphabet A to Z (caps) ||     Alphabet a to z
-        if ((ch >= 48 && ch <= 57) || (ch >= 65 && ch <= 90) || (ch >= 97 && ch <= 122))  {
-            // if it's within the range it is true that it is an alphanumerical value
-            return true;
-        }
-        // if it's not within the range it is a special character instead
-        else {
-            // and we return false instead
-            return false;
-        }
-    }
 
     // main method
     public static void main(String[] args) {
@@ -84,10 +85,11 @@ public class ReverseString {
 
         // print the original string and then invoke the method to print it reversed
         System.out.println("Original String : " + input1);
-        System.out.println("Reversed String : " + reverseString(input1)); // abc123!!!
+        System.out.println("Reversed String : " + reverseString(input1)); // 321cba!!!
 
         // print the original string and then invoke the method to print it reversed
         System.out.println("Original String : " + input2);
         System.out.println("Reversed String : " + reverseString(input2)); // on$%tac!3f&
     }
+
 }
