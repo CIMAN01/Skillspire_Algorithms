@@ -12,17 +12,23 @@ Example 2:
 Input - fat!cat
 Output - ftac!ta
 
- */
+*/
 
-public class ReverseStringEasy {
+public class ReverseAStringEasy {
 
     // a method that reverses a string without affecting first character
     public static String reverseString(String str) {
+        // using built in method to convert the given string into a sequence of characters
+//        char[] arr = str.toCharArray();
 
-        // create an array of characters
-        char[] arr;
-        // toCharArray() method converts the given string into a sequence of characters
-        arr = str.toCharArray();
+        // create an array of characters with a length equal to the input String
+
+        char[] arr = new char[str.length()];
+
+        // iterate over the input String and add each character to the array
+        for (int i = 0; i <= str.length()-1; i++) {
+            arr[i] = str.charAt(i);
+        }
 
         // create a new empty string
         String arrReversed = "";
@@ -31,10 +37,11 @@ public class ReverseStringEasy {
         arrReversed += arr[0];
 
         // then loop through array starting at end and up to (but not including) the first character
-        for (int i = str.length() - 1; i >= 1; i--) {
+        for (int i = str.length()-1; i >= 1; i--) {
             // add each character to string in the proper order to the new string
             arrReversed += arr[i];
         }
+
         // return the reversed String
         return arrReversed;
     }
@@ -53,4 +60,5 @@ public class ReverseStringEasy {
         System.out.println("Original String : " + input2);
         System.out.println("Reversed String : " + reverseString(input2)); // ftac!ta
     }
+
 }
