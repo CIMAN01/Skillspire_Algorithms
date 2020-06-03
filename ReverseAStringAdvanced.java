@@ -15,9 +15,8 @@ Output - on$%tac!3f&
 
 */
 
-
 // main class
-public class ReverseStringAdvanced {
+public class ReverseAStringAdvanced {
 
 //    String specialChars = "A!@#$% ^&*()Z";
 
@@ -72,6 +71,7 @@ public class ReverseStringAdvanced {
                 j--; // move index j to the left by decrementing it
             }
         }
+        
         // return the values of the array in string format
         return String.valueOf(arr);
     }
