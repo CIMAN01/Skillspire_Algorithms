@@ -1,4 +1,3 @@
-
 /*
 
 Given a string of numbers, letters, and special characters, reverse the string BUT
