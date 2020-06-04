@@ -42,7 +42,7 @@ public class ReverseAStringAdvanced {
         char[] arr = new char[str.length()];
 
         // iterate over the input String and add each character to the array
-        for (int i = 0; i < str.length()-1; i++) {
+        for (int i = 0; i <= str.length()-1; i++) {
             arr[i] = str.charAt(i);
         }
 
@@ -71,9 +71,19 @@ public class ReverseAStringAdvanced {
                 j--; // move index j to the left by decrementing it
             }
         }
-        
-        // return the values of the array in string format
-        return String.valueOf(arr);
+
+        // return the values of the array in string format using built-in method
+//        return String.valueOf(arr);
+
+        // create a new empty String
+        String reverse = "";
+        // loop through the array
+        for (int i = 0; i < arr.length-1; i++) {
+            // and concatenate or add each character to the String
+            reverse += arr[i];
+        }
+        // return the reversed String
+        return reverse;
     }
 
 
