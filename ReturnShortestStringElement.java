@@ -1,5 +1,6 @@
 import java.util.Arrays;
 
+// main class
 public class ReturnShortestStringElement {
 
     // a method that returns the shortest String in an array
