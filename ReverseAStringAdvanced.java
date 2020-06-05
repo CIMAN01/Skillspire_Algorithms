@@ -1,7 +1,9 @@
 /*
 
-Given a string with numbers, letters, and special characters, reverse the string BUT keep the
-special characters where they are.
+Challenge:
+
+Given a string with numbers, letters, and special characters, reverse the string BUT keep
+the special characters where they are.
 
 Example 1:
 
@@ -12,6 +14,21 @@ Example 2:
 
 Input -  f3$%cat!no&
 Output - on$%tac!3f&
+
+*/
+
+/*
+
+Solution:
+
+The idea here is to break up the String into an array of characters that can be
+individually checked against the given condition (whether it should stay in same position
+(if it's a special character) or if it should be reversed (if character is alphanumeric)
+and the condition check will carried out using a separate boolean method that checks each
+character). Based on the condition check, each element will either stay in same index or be
+moved into a different slot (character being swapped). Once all the array elements are in
+their proper respective indexes (String having been reversed), the array needs to be converted
+back into a String to be returned by the method.
 
 */
 
