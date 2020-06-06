@@ -27,7 +27,7 @@ public class Student {
 
 
     // a method that loops through each object and return true if all IDs have length of 10
-    public static boolean hasAllObjectsLengthOfTen(Student[] students) {
+    public static boolean hasAllObjectsALengthOfTen(Student[] students) {
         // iterate over the the student array
         for (int i = 0; i < students.length; i++) {
             // return false if the i-th ID length is not 10
@@ -49,18 +49,18 @@ public class Student {
         Student student4 = new Student("Robert", "3258241345");
         Student student5 = new Student("Raymond", "349112357");
         ///////////////////////////////////////////////////////////////////
-        Student student6 = new Student("Alberto", "1234567891");
-        Student student7 = new Student("John", "3436445456");
-        Student student8 = new Student("Clara", "3456965435");
-        Student student9 = new Student("Robert", "3258241345");
-        Student student10 = new Student("Raymond", "4349112357");
+        Student student6 = new Student("Max", "1234568719");
+        Student student7 = new Student("Jake", "3434645436");
+        Student student8 = new Student("Susan", "3446765135");
+        Student student9 = new Student("Ben", "3252843415");
+        Student student10 = new Student("Claire", "4341921375");
         // an array of students with odd numbered digits IDs
         Student[] studentsOdd = {student1, student2, student3, student4, student5};
         // an array of students with even numbered digits IDs
         Student[] studentsEven = {student6, student7, student8, student9, student10};
         // invoke methods and print to console
-        System.out.println(hasAllObjectsLengthOfTen(studentsOdd));
-        System.out.println(hasAllObjectsLengthOfTen(studentsEven));
+        System.out.println(hasAllObjectsALengthOfTen(studentsOdd));
+        System.out.println(hasAllObjectsALengthOfTen(studentsEven));
     }
 
 }
