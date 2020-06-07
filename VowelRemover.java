@@ -7,16 +7,16 @@ example:
 input  = "abcdDCBA123"
 output = "bcdDCBA123"  (
 
-avoid using build-in method such as str.replace("a", "");
+avoid using build-in methods such as str.replace("a", "");
 
 */
 
 // main class
 public class VowelRemover {
 
-    // create a method that takes a string and removes the vowels (a, e, i, o, u)
-    public static String vowelRemover(String str) {
-        // make sure the string is in lower case before proceeding
+    // a method that takes a string and removes the vowels (a, e, i, o, u)
+    public static String removeVowels(String str) {
+        // change the input String to lower case
         str = str.toLowerCase();
         // create a new empty String
         String noVowelString = "";
@@ -25,15 +25,15 @@ public class VowelRemover {
             // if it's a vowel it will not be added to the newly created String
             if ((str.charAt(i) == 'a') || (str.charAt(i) == 'e') || (str.charAt(i) == 'i')
                     || (str.charAt(i) == 'o') || (str.charAt(i) == 'u')) {
-                // print the omitted vowel
-                System.out.println("following vowels '" + str.charAt(i) + " removed");
+                // print the omitted vowels
+                System.out.println("following vowel '" + str.charAt(i) + "' removed");
             }
             // else concatenate or add character to the resulting String literal
             else {
                 noVowelString += str.charAt(i);
             }
         }
-        System.out.println("\nnew string: ");
+        System.out.print("\nstring with the vowels removed: ");
         // return statement
         return noVowelString;
     }
@@ -43,11 +43,10 @@ public class VowelRemover {
         // create some random string with vowels
         String aRandomString = "ABCD123aeiouPV";
         // print the original String
-        System.out.println("\noriginal string: ");
-        System.out.println(aRandomString);
+        System.out.println("\noriginal string: " + aRandomString);
         System.out.println();
         // invoke the method and print the new String
-        System.out.println(vowelRemover(aRandomString));
+        System.out.println(removeVowels(aRandomString));
     }
 
 }
