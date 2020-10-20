@@ -44,6 +44,19 @@ public class ReverseAStringEasy {
         // return the reversed String
         return arrReversed;
     }
+    
+    // a method that reverses a string without affecting first character
+    public static String reverseString2(String str) {
+        // create a new empty string and append the first character
+        String reverse = "" + str.charAt(0);
+        // iterate the string using > instead of >= to ignore the 0-th index of original string
+        for (int i = str.length()-1; i > 0; i--) {
+            // add each character to the new string in verse order
+            reverse += str.charAt(i);
+        }
+        // new string should now be reversed
+        return reverse;
+    }
 
     // main method
     public static void main(String[] args) {
@@ -54,10 +67,12 @@ public class ReverseAStringEasy {
         // print the original string and then invoke the method to print it reversed
         System.out.println("Original String : " + input1);
         System.out.println("Reversed String : " + reverseString(input1)); // a!!!321cb
+        System.out.println("Reversed String : " + reverseString2(input1)); // a!!!321cb
 
         // print the original string and then invoke the method to print it reversed
         System.out.println("Original String : " + input2);
         System.out.println("Reversed String : " + reverseString(input2)); // ftac!ta
+        System.out.println("Reversed String : " + reverseString2(input2)); // ftac!ta
     }
 
 }
