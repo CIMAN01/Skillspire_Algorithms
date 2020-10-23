@@ -102,6 +102,60 @@ public class ReverseAStringAdvanced {
         // return the reversed String
         return reverse;
     }
+    
+    /* below is a slightly different method of the above using a while-loop instead of a for-loop */
+    
+    / a method that reverses a string except for special characters
+    public static String reverseLettersAndNumbersOnly(String str) {
+        // handling base case of an empty string
+        if (str == null || str.length() == 0) {
+            return str;
+        }
+        // convert string to an array of characters
+        char[] chars = str.toCharArray();
+        // create two pointers
+        int left = 0; // left pointer starting at the beginning of the string/array
+        int right = chars.length - 1; // right pointer starting at the end of the string/array
+        // loop through array while left pointer is less than right pointer
+        while (left < right) {
+            // if characters at left and right indexes are both regular characters we reverse them
+            if (isAlphaNumeric(chars[left]) && isAlphaNumeric(chars[right])) {
+                // put that left-th index into a temporary variable
+                char temp = chars[left];
+                // replace left-th index with right-th index
+                chars[left] = chars[right];
+                // replace right-th index with original left-th index
+                chars[right] = temp;
+                // move to the next/previous character
+                left++; // increment left pointer
+                right--; // decrement right pointer
+            }
+            // if left-th index is a special character
+            else if (!isAlphaNumeric(chars[left])) {
+                // skip to the next character
+                left++; // move left pointer to the right by incrementing it
+            }
+            // if j-th index is a special character
+            else if (!isAlphaNumeric(chars[right])) {
+                // skip to the next character
+                right--; // move right pointer to the left by decrementing it
+            }
+        }
+        /* **** three different ways to convert an array of characters to a string *****/
+        // method one for converting array of characters to a string (creating a new string)
+        String reversed1 = new String(chars);
+        // method two for converting array of characters to a string (using copyValueOf)
+        String reversed2 = String.copyValueOf(chars);
+        // method three for converting array of characters to a string (using a string builder)
+        StringBuilder sb = new StringBuilder();
+        // for-each loop
+        for (char ch: chars) {
+            sb.append(ch);
+        }
+        String reversed3 = sb.toString(); // use toString()
+        // return string based on chosen method shown above
+        return reversed2;
+    }
 
 
     // main method
